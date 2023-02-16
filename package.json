@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "Testes Automatizados de API",
   "main": "index.js",
-  "scripts": {
-    "test": "test"
-  },
+ "scripts": {
+   "start": "npx cypress open",
+   "cy:run": "npx cypress run",
+   "test": "npx cypress run"
+ },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/barbaracabral/serverRestAPI.git"
