@@ -1,5 +1,7 @@
 name: Cypress Tests Run on Pipeline
+
 on: [push]
+
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
@@ -10,9 +12,7 @@ jobs:
         uses: actions/checkout@v3
       - name: Cypress run
         uses: cypress-io/github-action@v5
-        with:
-          browser: chrome
-     - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v3
         if: failure()
         with:
           name: cypress-screenshots
