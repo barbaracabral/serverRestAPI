@@ -1,5 +1,7 @@
 name: Cypress Tests Run on Pipeline
+
 on: [push]
+
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
@@ -8,13 +10,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - uses: actions/cache@v2
-          with:
-          path: |
-            ~/.cache/Cypress
-            node_modules
-          key: my-cache-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
-      - run: npm install cypress
       - name: Cypress run
         uses: cypress-io/github-action@v5
       - uses: actions/upload-artifact@v3
